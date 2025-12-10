@@ -14,12 +14,12 @@ roi2_bounds = [3.5 4.5;
 roi3_bounds = [2.0 3.0;
                4.0 5.0;
                3.5 4.5];
-% roi_bounds = [1.0 4.0;
-%                2.0 8.0;
-%                1.0 4.0];
-roi_bounds_all = cat(3, roi1_bounds, roi2_bounds, roi3_bounds);
-% roi_bounds_all = workspace_bounds;
-% roi_bounds_all = cat(3, roi_bounds);
+roi_bounds = [0.5 3.5;
+               0.5 5.0;
+               1.0 4.0];
+%roi_bounds_all = cat(3, roi1_bounds, roi2_bounds, roi3_bounds);
+%roi_bounds_all = workspace_bounds;
+roi_bounds_all = cat(3, roi_bounds);
 
 num_cams = 10;
 k_req    = 8;
@@ -48,8 +48,8 @@ cam_pitch = best_layout(:,5);
     initial_layout(:,1:3), initial_layout(:,4), initial_layout(:,5), voxels, k_req);
 
 % --- print main result ---
-num_voxels = numel(visible_counts);
-num_k      = sum(visible_counts >= k_req);    % hard k-coverage count
+num_voxels = numel(visible_counts_opt);
+num_k      = sum(visible_counts_opt >= k_req);    % hard k-coverage count
 
 fprintf('\n===== MULTI-ROI k-COVERAGE REPORT =====\n');
 fprintf('Required k               : %d\n', k_req);
