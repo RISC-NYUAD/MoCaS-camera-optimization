@@ -120,7 +120,7 @@ problem.camera.alpha_min = deg2rad(10);
 problem.camera.alpha_max = deg2rad(170);
 
 problem.objective.beta          = 0.5;
-problem.objective.lambda_track  = 100;
+problem.objective.lambda_track  = 1;
 problem.objective.lambda_dist   = 0.1;
 problem.objective.lambda_stereo = 0.1;
 problem.objective.lambda_center = 0.1;
